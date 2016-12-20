@@ -1,0 +1,113 @@
+.ui-icon-loading {
+    background: url(http://code.jquery.com/mobile/1.1.0-rc.1/images/ajax-loader.png);
+    background-size: 46px 46px;
+    width:46px;
+    height:46px;
+    -webkit-transform: rotate(360deg);
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes spin {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
+
+.title{
+	font-size: 50px;
+	font-weight: 300;
+}
+.icon{
+	width: 150px;
+	height: 150px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-image: url(../img/chat.png);
+	margin: 0 auto;
+}
+.subtitle{
+	font-size: 17px;
+	font-weight: 300;
+}
+.subtitle span{
+	cursor: pointer;
+}
+
+.subtitle span:nth-child(1){
+	color: #555;
+	border-bottom: 1px dotted #555;
+}
+.subtitle span:nth-child(2){
+	color: #3b5998;
+	border-bottom: 1px dotted #3b5998;
+}
+.subtitle span:nth-child(3){
+	color: #db3236;
+	border-bottom: 1px dotted #db3236;
+}
+
+.login-content{
+	width: 300px;
+	margin: 0 auto;
+	padding: 10px;
+	display: none;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.forgot-btn{
+	color: #555;
+	border-bottom: 1px dotted #555;
+	float: right;
+	cursor: pointer;
+}
+
+.popup{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: 1;
+	/*display: none;*/
+}
+
+.signup-content{
+	background: white;
+	width: 350px;
+	margin: 10% auto 15% auto;
+	padding: 10px 20px 20px 20px;
+	border-radius: 5px;
+}
+
+.animate{
+	animation: animatezoom 0.6s;
+	-webkit-animation: animatezoom 0.6s;
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+
+.close {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+}
