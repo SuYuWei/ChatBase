@@ -2,12 +2,16 @@ $(function(){
 
 	auth.onAuthStateChanged(function(user) {
 		if(user) {
-			// $.mobile.changePage("#main-page", { transition: "pop"});
-			// var userName = user.providerData[0].displayName;
-			// var photoURL = user.providerData[0].photoURL || "img/user.png";
+			console.log(user);
+			$.mobile.changePage("#main-page");
+			var userName = user.providerData[0].displayName;
+			var userEmail = user.providerData[0].email;
+			var photoURL = user.providerData[0].photoURL || "img/user.png";
+			$(".user-info-area").find(".user-name").text(userName);
+			$(".user-info-area").find(".user-email").text(userEmail);
+			$(".user-info-area").find(".uesr-avatar").attr("src",photoURL);
 		}else {
-			// $.mobile.changePage("#login-page");
-			$.mobile.changePage("#main-page", { transition: "pop"});
+			$.mobile.changePage("#login-page");
 		}
 	});
 
@@ -39,6 +43,11 @@ $(function(){
 
   	$(".sign-btn").click(function(){
   		signupPop.init();
+  	});
+
+  	$(".user-info-area").click(function(){
+  		$(".user-area-r").find("img").toggle();
+  		systemMenuPop.init();
   	});
   	
 })

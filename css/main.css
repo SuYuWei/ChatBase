@@ -1,26 +1,176 @@
-.main-container{
+html,body{
 	height: 100%;
-	display: flex;
 }
 
-.timeline-content{
-	height: 800px;
-    flex: 3;
-    display: flex;
-    flex-direction: column;
+.clearfix{
+	clear: both;
+}
+.clearfix::after {
+    content: '';
+    clear: both;
+    width: 0;
+    height: 0;
+    display: block;
+    line-height: 0;
+    font-size: 0;
 }
 
-.chat-content{
-	flex: 2;
+#top-bar{
+	width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 100;
+  	-webkit-box-shadow: 0px 0px 12px 0px rgba(55, 55, 55, 0.53);
 }
 
-.timeline-content .contain{
+#top-bar .top-header{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 18px;
+  	text-align: center;
+  	line-height: 60px;
+}
+#top-bar .top-menu{
+	width: 100%;
+	height: 100%;
+	padding: 0 1.2%;
+}
+.user-des{
+	font-size: 18px;
+}
+.tab-area{
+	float: left;
+	padding: 10px;
+}
+.tab-area .tab{
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	cursor: pointer;
+	margin: 0 10px;
+}
+.tab-area .chat-tab{
+	background-image: url(../img/chat.png);
+}
+.tab-area .list-tab{
+	background-image: url(../img/list.png);
+}
+.user-info-area{
+	width: 220px;
+	position: relative;
+	display: inline-block;
+	float: right;
+	cursor: pointer;
+	padding-left: 3px;
+	border-left: 2px solid rgba(55, 55, 55, 0.53);
+}
+.user-area-l{
+	float:left;
+	width: 60px;
+	height: 60px;
+	padding: 10px;
+}
+.user-area-l img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.user-area-m{
+	float: left;
+    padding: 12px 0px 0px 3px;
+    font-size: 14px;
+}
+.user-area-m div:first-child{
+	width: 137px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.user-area-m div:nth-child(2){
+	font-size: 11px;
+}
+.user-area-r {
+	float: left;
+    height: 15px;
+    width: 15px;
+    margin-top: 20px;
+}
+.user-area-r img {
+	width: 100%;
+	height: 100%;
+}
+
+#systemPop{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 101;
+}
+.system-menu {
+	position: absolute;
+	top: 61px;
+	right: 0;
+	width: 234px;
+	background: white;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	box-shadow: 1px 1px 12px rgba(55, 55, 55, 0.53);
+}
+.system-menu .sub-item {
+	cursor: pointer;
+	font-size: 14px;
+	color: black;
+	font-weight: bold;
+	padding: 14px 14px;
+}
+.system-menu .sub-item:last-child {
+	color: #1E7FFB;
+	border-top: 1px solid #ccc;
+}
+
+#timeline-content{
+	position: relative;
+    top: 60px;
+    width: 100%;
+    height: calc(100vh - 210px);
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+#footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	-webkit-box-shadow: 0px 0px 12px 0px rgba(50, 50, 50, 0.37);
+}
+
+#footer .inputList{
+	width: 300px;
+	padding: 3px 10px;
+	font-size: 18px;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 	border: 1px solid black;
-	flex: 7;
+	border-radius: 5px;
+	outline: 0px;
+  	cursor: text;
+  	overflow-x: hidden;
+  	overflow-y: auto;
+  	line-height: 25px;
+    display: inline-block;
 }
 
-.timeline-content .footer{
-	border: 1px solid black;
-	
-	flex: 4;
+#footer .inputList[contentEditable=true]:empty:before {
+  content: "What needs to be done?";
+  color: #bbb;
 }

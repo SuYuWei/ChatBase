@@ -41,3 +41,25 @@ var signupPop = {
 		  	});
 		}
   	}
+
+var systemMenuPop ={
+	html: '<div id="systemPop">'+
+			'<div class="system-menu">'+
+                '<div class="sub-item">Settings</div>'+
+                '<div class="sub-item logout-btn">Log out</div>'+
+            '</div>'+
+          '</div>',
+    init: function(){
+    	var sysPop = $(this.html);
+    	$("body").append(sysPop);
+    	$("#systemPop").click(function(){
+    		$(".user-area-r").find("img").toggle();
+    		sysPop.remove();
+    	});
+    	sysPop.find(".logout-btn").click(function(){
+    		sysPop.remove();
+	  		auth.signOut();
+	  	});
+    }
+}
+
